@@ -1,0 +1,3 @@
+Drop videos in this folder (.mp4 .webm .mov).
+Then list them in  src/content.js  ->  videos: [...]
+Tip: keep each video under ~50 MB so the site loads fast on her phone.

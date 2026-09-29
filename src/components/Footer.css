@@ -1,0 +1,11 @@
+.footer {
+  position: relative;
+  z-index: 1;
+  padding: 40px 20px 120px;
+  text-align: center;
+  font-family: var(--font-hand);
+  font-size: 1.55rem;
+  color: var(--muted);
+}
+.footer p { margin: 0; }
+.footer__small { margin-top: 6px; font-size: 1.25rem; }

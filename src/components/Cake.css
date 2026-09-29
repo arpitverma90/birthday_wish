@@ -1,0 +1,60 @@
+.cake__stage {
+  position: relative;
+  max-width: 520px;
+  margin: 0 auto;
+  opacity: 0;
+  scale: .88;
+  transition: opacity .6s ease, scale .7s cubic-bezier(.34, 1.56, .64, 1);
+}
+.cake__stage.is-visible { opacity: 1; scale: 1; }
+.cake__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, .35));
+}
+.tier--bottom { fill: var(--c1); }
+.tier--top { fill: var(--c6); }
+.frosting { fill: var(--paper); }
+
+.candle { cursor: pointer; outline: none; }
+.candle:focus-visible rect:first-of-type { stroke: var(--c3); stroke-width: 3; }
+.candle--out { cursor: default; }
+
+.flame {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: flicker .32s ease-in-out infinite alternate;
+  transition: opacity .25s ease, transform .25s ease;
+}
+.flame__glow { fill: var(--c2); opacity: .22; animation: glow .5s ease-in-out infinite alternate; }
+.flame__outer { fill: var(--c2); }
+.flame__inner { fill: var(--c3); }
+.candle--out .flame { animation: none; opacity: 0; transform: scaleY(0); }
+@keyframes flicker {
+  from { transform: scaleY(1)    scaleX(1)   rotate(-3deg); }
+  to   { transform: scaleY(1.14) scaleX(.9)  rotate(3deg); }
+}
+@keyframes glow { from { opacity: .14; } to { opacity: .34; } }
+
+.smoke circle { fill: rgba(255, 255, 255, .55); opacity: 0; }
+.candle--out .smoke circle { animation: smoke 1.6s ease-out forwards; }
+.candle--out .smoke circle:nth-child(2) { animation-delay: .15s; }
+.candle--out .smoke circle:nth-child(3) { animation-delay: .3s; }
+@keyframes smoke {
+  0%   { opacity: 0;  transform: translateY(0)     scale(.6); }
+  20%  { opacity: .8; }
+  100% { opacity: 0;  transform: translateY(-46px) scale(1.6); }
+}
+
+.cake__wish {
+  min-height: 64px;
+  margin-top: 6px;
+  font-family: var(--font-hand);
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  color: #F6B26B;
+  text-shadow: 0 3px 14px rgba(246, 178, 107, .3);
+}
+.cake__wish p { margin: 0; animation: pop-in .6s cubic-bezier(.34, 1.56, .64, 1) both; }
+.cake__actions { margin-top: 10px; }

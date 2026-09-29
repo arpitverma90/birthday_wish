@@ -1,0 +1,12 @@
+.click-hearts { position: fixed; inset: 0; z-index: 60; pointer-events: none; overflow: hidden; }
+.click-heart {
+  position: absolute;
+  line-height: 1;
+  will-change: transform, opacity;
+  animation: heart-float 1.25s ease-out forwards;
+}
+@keyframes heart-float {
+  0%   { opacity: 1; transform: translate(-50%, -50%) scale(.3); }
+  30%  { opacity: 1; transform: translate(calc(-50% + var(--dx) * .3), -90px) scale(1.15); }
+  100% { opacity: 0; transform: translate(calc(-50% + var(--dx)), -200px) scale(.6); }
+}

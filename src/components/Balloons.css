@@ -1,0 +1,56 @@
+.balloons {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.balloon {
+  position: absolute;
+  bottom: -160px;
+  width: var(--size);
+  height: calc(var(--size) * 1.2);
+  opacity: .88;
+  animation: rise var(--dur) linear infinite;
+  animation-delay: calc(var(--delay) * -1);   /* negative: balloons are already mid-flight on load */
+}
+.balloon__body {
+  position: absolute;
+  inset: 0;
+  border-radius: 50% 50% 50% 50% / 42% 42% 58% 58%;
+  background:
+    radial-gradient(circle at 35% 28%, rgba(255, 255, 255, .6), transparent 42%),
+    var(--color);
+  transform-origin: 50% 130%;
+  animation: sway var(--sway) ease-in-out infinite alternate;
+}
+.balloon__body::before {
+  content: '';
+  position: absolute;
+  left: 50%; bottom: -7px;
+  width: 12px; height: 10px;
+  translate: -50% 0;
+  background: var(--color);
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+.balloon__body::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 100%;
+  width: 2px; height: 72px;
+  translate: -50% 4px;
+  background: rgba(255, 255, 255, .5);
+}
+@keyframes rise {
+  from { transform: translateY(0); }
+  to   { transform: translateY(calc(-100vh - 340px)); }
+}
+@keyframes sway {
+  from { transform: rotate(-7deg); }
+  to   { transform: rotate(7deg); }
+}
+@media (max-width: 600px) {
+  .balloons { opacity: .7; }
+  .balloon { scale: .72; }
+}
+@media (prefers-reduced-motion: reduce) { .balloons { display: none; } }

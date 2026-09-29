@@ -1,0 +1,3 @@
+Drop the song in this folder (.mp3 .m4a .ogg .wav).
+Then set the file name in  src/content.js  ->  music: { file: "your-song.mp3", ... }
+The song starts the moment she taps "Open your gift".

@@ -1,0 +1,56 @@
+.paper {
+  position: relative;
+  max-width: 680px;
+  margin: 30px auto 0;
+  padding: 52px 40px 44px;
+  border-radius: 6px;
+  text-align: left;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image: repeating-linear-gradient(transparent 0 35px, rgba(59, 42, 74, .1) 35px 36px);
+  background-position: 0 16px;
+  box-shadow: var(--shadow-lg);
+  rotate: -1deg;
+  opacity: 0;
+  translate: 0 30px;
+  transition: opacity .6s ease, translate .6s ease;
+  cursor: pointer;
+}
+.paper.is-visible { opacity: 1; translate: 0 0; }
+.paper__pin {
+  position: absolute;
+  top: -14px; left: 50%;
+  width: 28px; height: 28px;
+  translate: -50% 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff 0, var(--c1) 45%, color-mix(in srgb, var(--c1) 60%, black) 100%);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, .3);
+}
+.paper p {
+  margin: 0;
+  font-family: var(--font-hand);
+  font-size: 1.65rem;
+  font-weight: 500;
+  line-height: 36px;
+}
+.paper .paper__to { font-weight: 700; margin-bottom: 36px; }
+.paper__line { min-height: 36px; }
+.paper__line + .paper__line { margin-top: 36px; }
+.paper__cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: -.12em;
+  background: var(--c1);
+  animation: blink .8s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+.paper__sign { margin-top: 36px; opacity: 0; transition: opacity .8s ease .2s; }
+.paper__sign--show { opacity: 1; }
+.paper .paper__name { font-size: 2.3rem; font-weight: 700; color: var(--c1); }
+
+@media (max-width: 560px) {
+  .paper { padding: 40px 22px 36px; rotate: 0deg; }
+  .paper p { font-size: 1.4rem; }
+}

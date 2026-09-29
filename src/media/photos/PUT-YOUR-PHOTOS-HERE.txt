@@ -1,0 +1,5 @@
+Drop her photos in this folder (.jpg .jpeg .png .gif .webp).
+Then list the file names in  src/content.js  ->  photos: [...]
+(or leave photos: [] empty and every photo here loads automatically, sorted by file name)
+
+The photo-1.jpg ... photo-6.jpg files are colourful placeholders - delete them once you add real pictures.
