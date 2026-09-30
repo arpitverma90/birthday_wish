@@ -102,9 +102,9 @@ export const content = {
         photo: "photo-1.jpg",           // optional — a file from src/media/photos/
       },
       {
-        date: "June 2023",
-        title: "The rainy-day date",
-        text: "Two umbrellas, one broken. We still talk about that samosa.",
+        date: "July 2026",
+        title: "The Balloon's Day",
+        text: "Colorful balloons filled the day with joy, laughter, and unforgettable memories.",
         photo: "photo-2.jpg",
       },
       {
@@ -126,8 +126,8 @@ export const content = {
   videos: {
     title: "Press play",
     items: [
-      // { file: "our-trip.mp4", title: "Goa, the best three days", poster: "photo-3.jpg" },
-      // { file: "birthday-message.mp4", title: "A message from everyone who loves you" },
+       { file: "our-trip.mp4", title: "Goa, the best three days", poster: "photo-3.jpg" },
+       { file: "birthday-message.mp4", title: "A message from everyone who loves you" },
     ],
   },
 
