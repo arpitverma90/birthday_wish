@@ -127,7 +127,7 @@ export const content = {
     title: "Press play",
     items: [
        { file: "our-trip.mp4", title: "Goa, the best three days", poster: "photo-3.jpg" },
-       { file: "birthday-message.mp4", title: "A message from everyone who loves you" },
+        { file: "birthday-message.mp4", title: "A message from your buddy" },
     ],
   },
 
